@@ -1,15 +1,24 @@
 Introduction
 ============
-This document covers the installation of Womble, an Object Relational Mapping (ORM) and Web Framework written in Objective-J. Womble is under heavy development, so please consider the following instructions as a non final, quick way to get up and running.
-In order to setup Womble you will need an existing installation of Narwhal - a general purpose JavaScript platform -- http://narwhaljs.org . A Git installation will also be assumed (http://git-scm.com).
+This document covers the installation of Womble, an Object Relational Mapping 
+(ORM) and Web Framework written in Objective-J. Womble is under heavy 
+development, so please consider the following instructions as a non final, 
+quick way to get up and running.
+
+In order to setup Womble you will need an existing installation of Narwhal 
+- a general purpose JavaScript platform -- http://narwhaljs.org . A Git 
+installation will also be assumed (http://git-scm.com).
 
 System Requirements
 -------------------
-The instructions detailed below should work without changes in *NIX environments (Mac OSX, GNU/Linux, Solaris, BSD,…). Windows users should use Cygwin (http://www.cygwin.com/).
+The instructions detailed below should work without changes in *NIX 
+environments (Mac OSX, GNU/Linux, Solaris, BSD,…). Windows users should use 
+Cygwin (http://www.cygwin.com/).
 
 Installation instructions
 -------------------------
-In this document we will install Womble sources in /Development/frameworks, although you can install at other location of your choice. 
+In this document we will install Womble sources in /Development/frameworks, 
+although you can install at other location of your choice. 
 Open a terminal window and type 
 
 	$ mkdir /Development/frameworks
@@ -20,41 +29,49 @@ Open a terminal window and type
 	$ git clone git://github.com/quile/Womble.git Womble
 
 This will clone the source code repository in /Development/frameworks/Womble
-Let’s create a test narwhal environment to host a test application. We will create this application under /Development/test
+Let’s create a test narwhal environment to host a test application. We will 
+create this application under /Development/test
 
 	$ mkdir /Development/test
 
 	$ cd /Development/test
 
-Narwhal uses tusk as its package manager. To create a narwhal environment called Womble, type
+Narwhal uses tusk as its package manager. To create a narwhal environment 
+called Womble, type
 
 	$ tusk init Womble
 
-This should create the skeleton of a narwhal environment. We need to activate the environment in order to properly use it -this step is very important
+This should create the skeleton of a narwhal environment. We need to activate 
+the environment in order to properly use it -this step is very important
 
 	$ cd Womble/
 
 	# !important
 	$ bin/sea 
 
-Now, copy the Womble sources previously cloned to the lib folder of the test application:
+Now, copy the Womble sources previously cloned to the lib folder of the test 
+application:
 
 	# Do not forget the final / in Womble
 	$ cp -R /Development/frameworks/Womble/ ./lib
 
-Womble is an Objective-J framework, so we need to install the Objective-J (http://github.com/280north/cappuccino) and OJUnit (http://github.com/280north/ojunit)
+Womble is an Objective-J framework, so we need to install the Objective-J 
+(http://github.com/280north/cappuccino) and OJUnit 
+(http://github.com/280north/ojunit)
 
 	$ tusk install objective-j
 
 	$ tusk install ojunit
 
-It only rests to install the database connectors to lead Womble to connect to the database tier. Tusk makes this step really easy
+It only rests to install the database connectors to lead Womble to connect to 
+the database tier. Tusk makes this step really easy
 
 	$ tusk install jdbc
 
 	$ tusk install sqlite-jdbc
 
-To ease Womble startup you can add the following function to your .profile (bash). Using nano editor, type
+To ease Womble startup you can add the following function to your .profile 
+(bash). Using nano editor, type
 
     $ cd ~
 
@@ -80,7 +97,8 @@ Open a new terminal, and symply type
 
 	$ Womble
 
-This function will change dir to your Womble test application directory. There, you can change dir to lib and execute the test included in the framework
+This function will change dir to your Womble test application directory. There, 
+you can change dir to lib and execute the test included in the framework
 
 	$ cd lib
 
