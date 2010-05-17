@@ -98,7 +98,11 @@ Open a new terminal, and symply type
 	$ Womble
 
 This function will change dir to your Womble test application directory. There, 
-you can change dir to lib and execute the test included in the framework
+you need first to activate the environment
+
+	$ bin/sea
+
+Then you can change dir to lib and execute the test included in the framework
 
 	$ cd lib
 
